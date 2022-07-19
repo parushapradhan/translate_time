@@ -18,7 +18,10 @@ def translate_time(hour, minute):
     if minute <= 30:
         translated_hour = numbers[hour]
     else:
-        translated_hour = numbers[hour + 1]
+        if hour == 12:
+            translated_hour = numbers[1]
+        else:
+            translated_hour = numbers[hour + 1]
 
     if (minute == 0):
         print(translated_hour, "o' clock");
